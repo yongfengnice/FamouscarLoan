@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/main_bg_color" >
+
+        <TextView
+            android:id="@+id/tv_quxiao"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/textcolor_white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/main_header_tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="筛选"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_qieding"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/textcolor_white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/top"
+        android:background="#F0EFF5"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="10dp" >
+
+        <TextView
+            android:id="@+id/tv_bdfl"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="标的分类"
+            android:textColor="@color/textcolor_black" />
+    </RelativeLayout>
+
+    <com.famous.zhifu.loan.view.mylistview.MyListView
+        android:id="@+id/listView_bdfl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl1"
+        android:listSelector="@drawable/item_bk"
+        android:scrollbars="none" >
+    </com.famous.zhifu.loan.view.mylistview.MyListView>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/listView_bdfl"
+        android:background="#F0EFF5"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="10dp" >
+
+        <TextView
+            android:id="@+id/tv_nsyl"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="年收益率"
+            android:textColor="@color/textcolor_black" />
+    </RelativeLayout>
+
+    <com.famous.zhifu.loan.view.mylistview.MyListView
+        android:id="@+id/listView_nsyl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl2"
+        android:divider="#CFCFCF"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/item_bk"
+        android:scrollbars="none" >
+    </com.famous.zhifu.loan.view.mylistview.MyListView>
+
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/listView_nsyl"
+        android:layout_marginTop="1dp"
+        android:background="#F0EFF5"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="10dp" >
+
+        <TextView
+            android:id="@+id/tv_jkqx"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="借款期限"
+            android:textColor="@color/textcolor_black" />
+    </RelativeLayout>
+
+    <com.famous.zhifu.loan.view.mylistview.MyListView
+        android:id="@+id/listView_jkqx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl3"
+        android:divider="#CFCFCF"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/item_bk"
+        android:scrollbars="none" >
+    </com.famous.zhifu.loan.view.mylistview.MyListView>
+
+</RelativeLayout>

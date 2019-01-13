@@ -1,0 +1,499 @@
+package com.famous.zhifu.loan.famouscarloan.investlist;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import net.tsz.afinal.FinalBitmap;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
+import android.widget.PopupWindow.OnDismissListener;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.famous.zhifu.loan.R;
+import com.famous.zhifu.loan.activity.ActivityInterface;
+import com.famous.zhifu.loan.activity.Consts;
+import com.famous.zhifu.loan.activity.LoginActivity;
+import com.famous.zhifu.loan.activity.MyApp;
+import com.famous.zhifu.loan.adapter.InvestAdapter;
+import com.famous.zhifu.loan.entity.BdzlItem;
+import com.famous.zhifu.loan.entity.CarInfo;
+import com.famous.zhifu.loan.holder.InvestViewHolder;
+import com.famous.zhifu.loan.internet.ServiceClient;
+import com.famous.zhifu.loan.util.NetUtil;
+import com.famous.zhifu.loan.util.SharePrefUtil;
+import com.famous.zhifu.loan.util.Tools;
+import com.famous.zhifu.loan.view.View_Loading;
+import com.famous.zhifu.loan.view.dialog.SelectFilterPopup;
+import com.famous.zhifu.loan.view.xlistview.XListView;
+import com.famous.zhifu.loan.view.xlistview.XListView.IXListViewListener;
+
+public class InvestListActivity extends Activity implements ActivityInterface,
+		OnClickListener, IXListViewListener {
+	private View mView;
+	private TextView mTvTitle;
+	private XListView xlistview;
+	private ArrayList<CarInfo> arrays = new ArrayList<CarInfo>();
+	private boolean isclearList = false; // 是否清除集合(用于下拉刷新)
+	private InvestAdapter adapter;
+	private FinalBitmap fb;
+	private View_Loading loading;
+	
+	private int loanstatus = 0; // 标的种类状态
+	private int yearrate = 0; // 收益率的状态
+	private int loanmonth = 0; // 借款期限的状态
+	
+	private int page = 1, p_num = 10;
+	
+	private ImageView loginView = null;
+	
+	private CheckBox typeBox = null;
+	private CheckBox annualearningBox = null;
+	private CheckBox loanperiodBox = null;
+	
+	private List<BdzlItem> typeArray = new ArrayList<BdzlItem>();		//标的分类
+	private List<BdzlItem> annualearningArray = new ArrayList<BdzlItem>();	//年收益率
+	private List<BdzlItem> loanperiodArray = new ArrayList<BdzlItem>();		//借款期限
+	
+	private SelectFilterPopup typeFilterPopup = null;
+	private SelectFilterPopup annualearningFilterPopup = null;
+	private SelectFilterPopup loanperiodFilterPopup = null;
+
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		mView = getLayoutInflater().inflate(R.layout.activity_invest_list, null);
+		setContentView(mView);
+		MyApp.getInstance().addActivity(this);
+		findView();
+		initData();
+		addAction();
+
+		loading.setVisibility(View.VISIBLE);
+		doloadtask();
+		
+		dosometthing();
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (TextUtils.isEmpty(MyApp.token)) {
+			loginView.setVisibility(View.VISIBLE);
+		} else {
+			loginView.setVisibility(View.GONE);
+		}
+	}
+
+	@Override
+	public void findView() {
+		fb = FinalBitmap.create(this);
+		loading = (View_Loading) findViewById(R.id.loading);
+		findViewById(R.id.main_header_iv_left).setVisibility(View.GONE);
+		loginView = (ImageView) findViewById(R.id.main_header_iv_right);
+		mTvTitle = (TextView) mView.findViewById(R.id.main_header_tv_text);
+		
+		typeBox = (CheckBox)findViewById(R.id.invest_list_filter_fenlei);
+		annualearningBox = (CheckBox)findViewById(R.id.invest_list_filter_lilv);
+		loanperiodBox = (CheckBox)findViewById(R.id.invest_list_filter_qixian);
+		
+		
+		xlistview = (XListView) mView.findViewById(R.id.invest_list_lv);
+		xlistview.setXListViewListener(this);
+		xlistview.setPullLoadEnable(false);// 开启加载更多
+		xlistview.setPullRefreshEnable(true);// 开启下拉刷新
+		long lastRefTime = SharePrefUtil.getLastUpdateTime(getApplicationContext(), Consts.SharePref.INVEST);
+		xlistview.setLastRefreshTime(lastRefTime);
+	}
+
+	@Override
+	public void initData() {
+		mTvTitle.setText(getString(R.string.invest_list));
+		adapter = new InvestAdapter(getApplication(), arrays,MyApp.screenHeight, fb);
+		xlistview.setAdapter(adapter);
+	}
+
+	@Override
+	public void addAction() {
+		xlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Intent intent = new Intent(InvestListActivity.this,InvestDetailActivity.class);
+				intent.putExtra("sn", arrays.get(position - 1).getLoansn());
+				startActivity(intent);
+			}
+		});
+		
+		//标的分类
+		typeBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			public void onCheckedChanged(CompoundButton arg0, boolean checked) {
+				if (checked) {
+					if (null==typeFilterPopup) {
+						typeFilterPopup = new SelectFilterPopup(InvestListActivity.this,arg0,"loanstatus",typeArray,itemClickListener);
+						
+						typeFilterPopup.setOnDismissListener(new OnDismissListener() {
+							
+							@Override
+							public void onDismiss() {
+								resetCheckBox() ;
+							}
+						});
+					}
+					typeFilterPopup.showAsDropDown(arg0);
+					//typeFilterPopup.showAtLocation(arg0, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 500, 500);
+				}else {
+					
+				}
+					
+			}
+		});
+		
+		//年收益率
+		annualearningBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					
+					public void onCheckedChanged(CompoundButton arg0, boolean checked) {
+						if (checked) {
+							if (null==annualearningFilterPopup) {
+								annualearningFilterPopup = new SelectFilterPopup(InvestListActivity.this,arg0,"yearrate",annualearningArray,itemClickListener);
+								
+								annualearningFilterPopup.setOnDismissListener(new OnDismissListener() {
+									
+									@Override
+									public void onDismiss() {
+										resetCheckBox() ;
+									}
+								});
+							}
+							
+							annualearningFilterPopup.showAsDropDown(arg0);
+						}else {
+							
+						}
+					}
+				});
+		
+		//借款期限
+		loanperiodBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			public void onCheckedChanged(CompoundButton arg0, boolean checked) {
+				if (checked) {
+					if (null==loanperiodFilterPopup) {
+						loanperiodFilterPopup = new SelectFilterPopup(InvestListActivity.this,arg0,"loanmonth",loanperiodArray,itemClickListener);
+						
+						loanperiodFilterPopup.setOnDismissListener(new OnDismissListener() {
+							
+							@Override
+							public void onDismiss() {
+								resetCheckBox() ;
+							}
+						});
+					}
+					
+					loanperiodFilterPopup.showAsDropDown(arg0);
+				}else {
+					
+				}
+			}
+		});
+	}
+	
+	private void resetCheckBox(){
+		typeBox.setChecked(false);
+		annualearningBox.setChecked(false);
+		loanperiodBox.setChecked(false);
+	}
+	
+	
+	/** 弹出list的点击事件 */
+	private OnItemClickListener itemClickListener = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,long id) {	
+			InvestViewHolder viewHolder = (InvestViewHolder)view.getTag();
+			
+			String key = viewHolder.getKey();
+			int pos = viewHolder.getPosition();
+			
+			viewHolder.getCbButton().setText(viewHolder.getName());
+			
+			dismissHandler(key,pos);
+			
+			// Log.i("key", key);
+		}
+	};
+	
+	/** popwindow消失后将所有checkbox置位 */ 
+	private void dismissHandler(String key,int pos){
+		if (key=="loanstatus") {
+			typeFilterPopup.dismiss();
+			
+			updateArr(typeArray,pos);
+			
+			loanstatus = pos;
+		}else if (key=="yearrate") {
+			annualearningFilterPopup.dismiss();
+			
+			updateArr(annualearningArray,pos);
+			
+			yearrate = pos;
+		}else {
+			loanperiodFilterPopup.dismiss();
+			
+			updateArr(loanperiodArray,pos);
+			
+			loanmonth = pos;
+		}
+		
+		xlistview.toRefreshing();
+	}
+	
+	/** 更新数据源 */
+	private void updateArr(List<BdzlItem> arr,int position){
+		for (int i = 0,j=arr.size(); i < j; i++) {
+			if (i==position) {
+				arr.get(i).setIspress(true);
+			}else {
+				arr.get(i).setIspress(false);
+			}
+		}
+	}
+
+	private void doloadtask() {
+		if (NetUtil.isNetworkConnected(this)) {
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("loanstatus", loanstatus + "");
+			params.put("yearrate", yearrate + "");
+			params.put("loanmonth", loanmonth + "");
+			params.put("p", page + "");
+			params.put("page_num", p_num + "");
+			ServiceClient.call(Consts.NetWork.DDBLB, params, qian_index);
+		} else {
+			Toast.makeText(this, Consts.NONETWORK, 1).show();
+		}
+	}
+
+	ServiceClient.Callback qian_index = new ServiceClient.Callback() {
+
+		@Override
+		public void callback(JSONObject data) {
+			// System.out.println("投资列表   :" + data);
+
+			loading.setVisibility(View.GONE);
+			xlistview.setPullLoadEnable(true);
+			xlistview.stopLoadMore();
+			xlistview.stopRefresh();
+			// 记录最后刷新时间
+			long lastTime = System.currentTimeMillis();
+			xlistview.setLastRefreshTime(lastTime);
+			SharePrefUtil.setLastUpdateTime(getApplicationContext(),
+					Consts.SharePref.INVEST);
+			// 如果是下拉刷新则清除集合
+			if (isclearList) {
+				arrays.clear();
+				isclearList = false;
+			}
+
+			try {
+				if (data.getInt("errorcode") == 0
+						&& !Tools.isEquals(data.get("dataresult").toString(),
+								"[]")) {
+					JSONObject json = data.getJSONObject("dataresult");
+					Log.i("sam", "invest收到的数据"+json.toString());
+					int totalPage = Integer.parseInt(json
+							.getString("page_total"));
+					JSONArray array = json.getJSONArray("loan_data");
+					for (int i = 0, j = array.length(); i < j; i++) {
+						CarInfo info = new CarInfo();
+						JSONObject obj = array.getJSONObject(i);
+						info.setLoan_type(obj.getString("loan_type"));
+						info.setCateid(obj.getString("cateid"));
+						info.setLoanday(obj.getString("starttime"));
+						info.setTendermoney(obj.getString("tendermoney"));
+						info.setLoansn(obj.getString("loansn"));
+						info.setYearrate(obj.getString("yearrate"));
+						info.setCate_logo(obj.getString("cate_logo"));
+						info.setRepayment(obj.getString("repayment"));
+						info.setLoanstatus(obj.getString("loanstatus"));
+						info.setLoanmoney(obj.getString("loanmoney"));
+						info.setLoanmonth(obj.getString("loanmonth"));
+						info.setTitle(obj.getString("title"));
+						info.setRatio(obj.getString("ratio"));
+						info.setPath(obj.getString("path"));
+//						info.setType(obj.getString("type"));
+						arrays.add(info);
+					}
+					adapter.notifyDataSetChanged();
+					if (page == totalPage) {
+						if (page == 1) {
+							xlistview.setPullLoadEnable(false);
+							xlistview.setNoLoadFooterView("", null);
+						} else {
+							xlistview.setPullLoadEnable(false);
+							xlistview.setNoLoadFooterView("没有更多的数据。", null);
+						}
+					} else if (totalPage == 0) {
+						xlistview.setPullLoadEnable(false);
+					} else {
+						xlistview.setPullLoadEnable(true);
+					}
+				} else {
+					xlistview.setPullLoadEnable(false);
+					xlistview.setNoLoadFooterView("", null);
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+				try {
+					String str = data.getString("errormsg");
+					Toast.makeText(InvestListActivity.this, str, 1).show();
+				} catch (JSONException ee) {
+					ee.printStackTrace();
+					Toast.makeText(InvestListActivity.this,Consts.UNKNOWN_FAULT, 1).show();
+				}
+			}
+
+		}
+
+	};
+	
+	/** 请求查询条件   */
+	private void dosometthing() {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("type", "condition");
+		ServiceClient.call(Consts.NetWork.DDBLB, params, callback);
+	}
+
+	ServiceClient.Callback callback = new ServiceClient.Callback() {
+
+		@Override
+		public void callback(JSONObject data) {
+			try {
+				if (data.getInt("errorcode") == 0) {
+					
+					// Log.i("条件", data.toString());
+					
+					if (!TextUtils.isEmpty(data.get("dataresult").toString())) {
+						JSONObject json = data.getJSONObject("dataresult");
+						JSONObject datajson = json.getJSONObject("data");
+						JSONArray arrayloanstatus = datajson.getJSONArray("cateid");	//分类
+						JSONArray arrayloanmonth = datajson.getJSONArray("loanmonth");	//期限
+						JSONArray arrayyearrate = datajson.getJSONArray("yearrate");	//收益率
+						
+						for (int i = 0; i < arrayloanstatus.length(); i++) {
+							BdzlItem item = new BdzlItem();
+							if (i == loanstatus) {
+								item.setIspress(true);
+							} else {
+								item.setIspress(false);
+							}
+							item.setName(arrayloanstatus.getString(i) + "");
+							
+							typeArray.add(item);
+						}
+						
+						for (int i = 0; i < arrayyearrate.length(); i++) {
+
+							BdzlItem item = new BdzlItem();
+							if (i == yearrate) {
+								item.setIspress(true);
+							} else {
+								item.setIspress(false);
+							}
+							item.setName(arrayyearrate.getString(i) + "");
+							annualearningArray.add(item);
+						}
+						
+						
+						for (int i = 0; i < arrayloanmonth.length(); i++) {
+							BdzlItem item = new BdzlItem();
+							if (i == loanmonth) {
+								item.setIspress(true);
+							} else {
+								item.setIspress(false);
+							}
+							item.setName(arrayloanmonth.getString(i) + "");
+							loanperiodArray.add(item);
+						}
+						
+					}
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+	};
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.main_header_iv_right:
+			Intent intent = new Intent(this, SearchLcxm.class);
+			Bundle bundle = new Bundle();
+			bundle.putInt("loanstatus", loanstatus);
+			bundle.putInt("yearrate", yearrate);
+			bundle.putInt("loanmonth", loanmonth);
+			intent.putExtras(bundle);
+			startActivityForResult(intent, 1001);
+			break;
+		default:
+			break;
+		}
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == 1001 && resultCode == 888) {
+			loanstatus = data.getExtras().getInt("loanstatus");
+			yearrate = data.getExtras().getInt("yearrate");
+			loanmonth = data.getExtras().getInt("loanmonth");
+			xlistview.toRefreshing();
+		}
+	}
+
+	@Override
+	public void onRefresh() {
+		loading.setVisibility(View.VISIBLE);
+		page = 1;
+		isclearList = true;
+		doloadtask();
+	}
+
+	@Override
+	public void onLoadMore() {
+		page++;
+		doloadtask();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		MyApp.getInstance().remove(this);
+	}
+	
+	public void userHandler(View v){
+		startActivity(new Intent(this,LoginActivity.class));
+	}
+}

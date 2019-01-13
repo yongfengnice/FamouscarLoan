@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/item_invest_filter_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/item_invest_filter_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="不限制"
+        android:textColor="@color/color_coffee"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/item_invest_filter_gou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="gou"
+        android:paddingRight="10dp"
+        android:src="@drawable/gou" />
+
+</RelativeLayout>

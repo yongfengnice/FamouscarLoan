@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    >
+    <ImageView 
+        android:id="@+id/notifyLog"
+        android:layout_width="36dip"
+        android:layout_height="36dip" 
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dip"
+        />
+    <TextView 
+        android:id="@+id/notifyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/notifyLog"
+        android:layout_alignTop="@id/notifyLog"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="8dip"
+        android:textColor="#000"
+        android:singleLine="true"
+        />
+    <TextView 
+        android:id="@+id/notifyMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notifyTitle"
+        android:layout_toRightOf="@id/notifyLog"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:textColor="#000"
+        android:singleLine="true"
+        />
+	<TextView 
+	    android:id="@+id/notifyTime"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@id/notifyMessage"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginRight="5dip" 
+	    android:textColor="#000"
+	    />    
+
+</RelativeLayout>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.famous.zhifu.loan"
+    android:versionCode="2"
+    android:versionName="2.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+
+    <!-- <permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" /> -->
+
+    <application
+        android:name="com.famous.zhifu.loan.activity.MyApp"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/NoTitleBarTheme" >
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.PayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.AccountActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.SettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.AccountVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.ToggleBtnCtrlActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.CardVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.NameVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.EmailVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.AddressVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.ContactVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.ChangePasswordVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.ChangeHeadVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.TzjlDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.AccountBalanceActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.UsuallyProblemActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.UsuallyProblemDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.AccountRechargeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.WithdrawActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.PhoneConfirmActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.FeedBackActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.HasVerityAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.CitySelectAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.BankSelectActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.HkygAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.TzjlAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.ZjlsAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.account.ZdtbAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.JoinUsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.FindPasswordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.FindPasswordVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.CalculateAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.InvestListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.InvestDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.BigImageAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.CarDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.SearchLcxm"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.RepayAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.InfoDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.RecordDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.investlist.InvestNumAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.notice.NoticeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.notice.NoticeCommentsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.notice.NoticeDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.notice.MediaDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.GestureEditActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.GestureVerifyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.RegsiterActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.GuideActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.LoanMoneyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.LoanMoneyConfirmActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".famouscarloan.home.RankActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.baofoo.sdk.vip.BaofooPayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name=".service.DownloadServer"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <receiver android:name=".service.SisterReceiver" >
+            <intent-filter>
+                <action android:name="com.xvsheng.qdd.download.failed" />
+                <action android:name="com.xvsheng.qdd.download.successed" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="#D7D7D7"
+    android:orientation="horizontal"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp"
+    android:paddingTop="0.25dp"
+    android:weightSum="8" >
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="序号"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0.5dp"
+        android:layout_weight="2"
+        android:background="@color/white"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="当前本息(元)"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0.5dp"
+        android:layout_weight="2"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="剩余本金(元)"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0.5dp"
+        android:layout_weight="3"
+        android:background="@color/white"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp" 
+        android:text="截止还款日期"/>
+
+</LinearLayout>

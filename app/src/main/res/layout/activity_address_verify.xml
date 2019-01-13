@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/main_header" >
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_no_concer"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/idname" />
+
+        <EditText
+            android:id="@+id/editName"
+            style="@style/verify_edittext"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/name_id"
+            android:textColor="@color/textcolor_black"
+            android:textColorHint="@color/textcolor_gray" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_no_concer"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/mobile_phone" />
+
+        <EditText
+            android:id="@+id/editPhone"
+            style="@style/verify_edittext"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/mobile_phone"
+            android:textColor="@color/textcolor_black"
+            android:textColorHint="@color/textcolor_gray" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_no_concer"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/postalcode" />
+
+        <EditText
+            android:id="@+id/editPostcode"
+            style="@style/verify_edittext"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/email"
+            android:textColor="@color/textcolor_black"
+            android:textColorHint="@color/textcolor_gray" />
+    </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_no_concer"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/add" />
+
+        <EditText
+            android:id="@+id/editAddress"
+            style="@style/verify_edittext"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/address"
+            android:textColor="@color/textcolor_black"
+            android:textColorHint="@color/textcolor_gray" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/green_bg"
+        android:text="@string/save"
+        android:textColor="@color/white_color"
+        android:textSize="16sp" />
+
+</LinearLayout>

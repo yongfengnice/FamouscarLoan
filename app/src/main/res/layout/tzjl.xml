@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <include 
+        android:id="@+id/top"
+        layout="@layout/main_header" >
+    </include>
+    
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <com.famous.zhifu.loan.view.xlistview.XListView
+            android:id="@+id/xlistview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color"
+            android:divider="#D7D7D7"
+            android:dividerHeight="1dp"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <com.famous.zhifu.loan.view.View_Loading
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+    </com.famous.zhifu.loan.view.View_Loading>
+
+</RelativeLayout>

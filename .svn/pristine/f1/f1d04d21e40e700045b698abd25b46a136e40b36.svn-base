@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/notice_head"
+        layout="@layout/main_header" />
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/notice_head">
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/noticeOne"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/shape_red_left_line_red_bg_select"
+                android:gravity="center"
+                android:text="@string/site_notice"
+                android:textColor="@color/textcolor_light_black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/noticeTwo"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/shape_red_right_line_red_bg"
+                android:gravity="center"
+                android:text="@string/media_report"
+                android:textColor="@color/textcolor_light_black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.famous.zhifu.loan.view.xlistview.XListView
+        android:id="@+id/xlistview_notice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:layout_marginTop="10dp"
+        android:background="@color/bg_color"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" >
+    </com.famous.zhifu.loan.view.xlistview.XListView>
+
+    <com.famous.zhifu.loan.view.xlistview.XListView
+        android:id="@+id/xlistview_media"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:layout_marginTop="2dp"
+        android:background="@color/bg_color"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"
+        android:visibility="gone" >
+    </com.famous.zhifu.loan.view.xlistview.XListView>
+
+    <com.famous.zhifu.loan.view.View_Loading
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+    </com.famous.zhifu.loan.view.View_Loading>
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<RepositoryCustomSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LastUsedView>FileStatus</LastUsedView>
+  <AutoRefresh>true</AutoRefresh>
+  <AutoRefreshRemotes>true</AutoRefreshRemotes>
+  <LogBranchFilterIndex>0</LogBranchFilterIndex>
+  <SidebarExpandedItems>
+    <string>File Status</string>
+    <string>Branches</string>
+    <string>Remotes</string>
+  </SidebarExpandedItems>
+  <SidebarWidth>140</SidebarWidth>
+</RepositoryCustomSettings>

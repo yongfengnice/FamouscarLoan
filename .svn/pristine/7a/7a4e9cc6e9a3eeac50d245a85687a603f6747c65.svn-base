@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_height="45dp" >
+
+        <ImageView
+            android:id="@+id/account_iv_icon_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/p_center_balance" />
+
+        <TextView
+            android:id="@+id/account_tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/account_iv_icon_left"
+            android:text="@string/account_balance"
+            android:textColor="@color/textcolor_black" 
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/account_iv_icon_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrow_right" />
+
+        <TextView
+            android:id="@+id/account_tv_text_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/account_iv_icon_right"
+            android:textColor="@color/textcolor_red"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</LinearLayout>

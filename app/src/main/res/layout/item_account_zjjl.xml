@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D7D7D7"
+    android:orientation="horizontal"
+    android:paddingLeft="1dp" 
+    android:paddingRight="1dp"
+    android:paddingTop="0.25dp"
+    android:weightSum="10">
+    
+    <TextView android:id="@+id/item_account_zjjl_time"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3.5"
+        android:background="@color/bg_color"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"/>
+    
+    <TextView android:id="@+id/item_account_zjjl_jine"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="#EEEEEE"
+        android:layout_marginLeft="0.5dp"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"/>
+    
+    <TextView android:id="@+id/item_account_zjjl_type"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:background="@color/bg_color"
+        android:layout_marginLeft="0.5dp"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"/>
+    
+    <TextView android:id="@+id/item_account_zjjl_state"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="#EEEEEE"
+        android:layout_marginLeft="0.5dp"
+        android:textColor="@color/textcolor_black"
+        android:textSize="12sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"/>
+    
+
+</LinearLayout>

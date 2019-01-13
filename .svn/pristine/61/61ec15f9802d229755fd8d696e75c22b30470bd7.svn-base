@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/main_header" >
+    </include>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTopic"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/top"
+        android:background="@color/line"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/invest_list_filter_fenlei"
+            style="@style/product_list_checkbox"
+            android:layout_marginRight="1dp"
+            android:text="@string/invest_list_filter_fenlei" />
+
+        <CheckBox
+            android:id="@+id/invest_list_filter_lilv"
+            style="@style/product_list_checkbox"
+            android:layout_marginRight="1dp"
+            android:text="@string/invest_list_filter_lilv" />
+
+        <CheckBox
+            android:id="@+id/invest_list_filter_qixian"
+            style="@style/product_list_checkbox"
+            android:text="@string/invest_list_filter_qixian" />
+    </LinearLayout>
+
+    <com.famous.zhifu.loan.view.xlistview.XListView
+        android:id="@+id/invest_list_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearLayoutTopic"
+        android:layout_marginTop="2dp"
+        android:background="@color/bg_color"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <com.famous.zhifu.loan.view.View_Loading
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+    </com.famous.zhifu.loan.view.View_Loading>
+
+</RelativeLayout>

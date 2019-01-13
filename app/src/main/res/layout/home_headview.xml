@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="1dp"
+    android:background="@color/line" >
+
+    <com.famous.zhifu.loan.view.abviewpager.AbSlidingPlayView
+        android:id="@+id/slidingPlayView"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="160dp" >
+    </com.famous.zhifu.loan.view.abviewpager.AbSlidingPlayView>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/ll1"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/home_bg_left"
+            android:gravity="bottom"
+            android:paddingBottom="8dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/qian"
+                android:drawablePadding="5dp"
+                android:text="累计投资(元):"
+                android:textColor="@color/textcolor_light_black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/home_headview_touzi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="24353.09"
+                android:textColor="@color/textcolor_red"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/home_headview_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/home_bg_right"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp" >
+
+            <ImageView
+                android:id="@+id/home_headview_reg_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/home_bg_reg" />
+
+            <TextView android:id="@+id/home_headview_guid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="快速注册"
+                android:textColor="@color/textcolor_light_black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

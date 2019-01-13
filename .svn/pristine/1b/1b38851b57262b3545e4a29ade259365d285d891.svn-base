@@ -1,0 +1,165 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="NoTitleBarTheme" parent="@android:style/Theme.Black.NoTitleBar"></style>
+    
+    <style name="main_tab_bottom">
+        <item name="android:textColor">@drawable/main_btn_color</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="verify_edittext">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorHint">@color/textcolor_gray</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="ActionSheetAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
+        <item name="android:windowExitAnimation">@anim/push_up_out</item>
+    </style>
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="CustomExitDialog" parent="@style/CustomDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ProgressBar_Mini" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">40dip</item>
+        <item name="android:minHeight">12dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/progressbar_mini</item>
+    </style>
+
+    <style name="dialog_base" parent="@android:style/Theme.Dialog">
+
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowFrame">@null</item>
+
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+
+        <!-- 是否显示title -->
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- 设置dialog的背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <!-- 背景是否模糊显示 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+    <!-- 引导页，跳过 -->
+    <style name="guide_jump_style">
+        <item name="android:textColor">@color/textcolor_black</item>
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:background">@drawable/round_btn_white_grey</item>
+        <item name="android:paddingTop">@dimen/margin_5</item>
+        <item name="android:paddingBottom">@dimen/margin_5</item>
+        <item name="android:paddingLeft">@dimen/margin_15</item>
+        <item name="android:paddingRight">@dimen/margin_15</item>
+        <item name="android:clickable">true</item>
+        <item name="android:onClick">jumpToMain</item>
+    </style>
+
+    <!-- 引导页，立即体验 -->
+    <style name="guide_experience_style">
+        <item name="android:textColor">@color/color_coffee</item>
+        <item name="android:textSize">@dimen/size_18</item>
+        <item name="android:background">@drawable/round_btn_white_coffee</item>
+        <item name="android:paddingTop">@dimen/margin_5</item>
+        <item name="android:paddingBottom">@dimen/margin_5</item>
+        <item name="android:paddingLeft">@dimen/margin_20</item>
+        <item name="android:paddingRight">@dimen/margin_20</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- 按钮样式：上下边框5dp，左右15dp -->
+    <style name="btn_10_15_style">
+        <item name="android:paddingTop">@dimen/margin_5</item>
+        <item name="android:paddingBottom">@dimen/margin_5</item>
+        <item name="android:paddingLeft">@dimen/margin_15</item>
+        <item name="android:paddingRight">@dimen/margin_15</item>
+    </style>
+    
+    <!-- 注册样式：上下边框5dp，左右15dp -->
+    <style name="btn_10_15_reg_style">
+        <item name="android:paddingTop">@dimen/margin_5</item>
+        <item name="android:paddingBottom">@dimen/margin_5</item>
+        <item name="android:paddingLeft">@dimen/margin_15</item>
+        <item name="android:paddingRight">@dimen/margin_15</item>
+        <item name="android:textColor">@color/textcolor_light_black</item>
+    </style>
+    
+    <style name="home_tab_bottom">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textcolor_black</item>
+        <item name="android:background">@drawable/home_tab_selector</item>
+    </style>
+    
+    <style name="detail_tab_bottom">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/detail_tab_radiobtn_txt_selector</item>
+        <item name="android:background">@drawable/detail_tab_selector</item>
+    </style>
+
+    <style name="self_define_ProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:max">100</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/self_define_progress_uncomplete</item>
+    </style>
+
+    <style name="product_list_checkbox">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:checked">false</item>
+        <item name="android:drawableRight">@drawable/product_filter_checkbox_selector</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/product_list_checkbox_txt_selector</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+</resources>

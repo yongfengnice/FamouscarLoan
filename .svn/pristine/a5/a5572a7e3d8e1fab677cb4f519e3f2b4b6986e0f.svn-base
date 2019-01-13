@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">智富360</string>
+    
+    <string name="guide_jump_home">跳过</string>
+    <string name="guide_Experience">立即体验</string>
+    <string name="common_back_label">返回</string>
+    
+    <string name="first_page">首页</string>
+    <string name="invest_list">投资列表</string>
+    <string name="notice">公告</string>
+    <string name="more">更多</string>
+    <string name="account">账号</string>
+    <string name="my_account">我的账户</string>
+    <string name="message">消息</string>
+    <string name="join_us">加盟我们</string>
+    <string name="more_news">新闻公告</string>
+    <string name="right_away_invest">快速借款</string>
+    <string name="active_message">活动资讯</string>
+    <string name="accurate">计算器</string>
+    <string name="person_center">个人中心</string>
+    <string name="add_income">累计收益</string>
+    
+    <string name="home_item_car">智车贷</string>
+    <string name="home_item_xue">智学贷</string>
+    <string name="home_item_house">智房贷</string>
+    
+    <string name="invest_list_filter_fenlei">标的分类</string>
+    <string name="invest_list_filter_lilv">年收益率</string>
+    <string name="invest_list_filter_qixian">借款期限</string>
+    
+    
+    <string name="invest_detail_tab_loan">借款信息</string>
+    <string name="invest_detail_tab_car">车辆概况</string>
+    <string name="invest_detail_tab_record">投资记录</string>
+    <string name="invest_detail_tab_repay">还款方式</string>
+    
+    <string name="account_balance">账户预览</string>
+    <string name="account_certification">认证管理</string>
+    <string name="account_chongzhi">账户充值</string>
+    <string name="account_tixian">账户提现</string>
+    <string name="account_fund">资金记录</string>
+    <string name="account_investment_records">我的投资</string>
+    <string name="account_more">更多信息</string>
+    <string name="account_auto_bid">自动投标</string>
+    <string name="setting">设置</string>
+    <string name="new_version">版本更新</string>
+    <string name="version_information">版权信息</string>
+    <string name="about_us">关于智富360</string>
+    <string name="usually_problem">常见问题</string>
+    <string name="invest_detail">投资详情</string>
+    <string name="loan">申请借款</string>
+    <string name="feedback">意见反馈</string>
+    <string name="line">客服热线</string>
+    <string name="verify_head">头像修改</string>
+    <string name="verify_password">密码修改</string>
+    <string name="verify_name">实名认证</string>
+    <string name="verify_mobile">手机认证</string>
+    <string name="verify_card">银行卡认证</string>
+    <string name="verify_email">邮箱认证</string>
+    <string name="verify_contacts">紧急联系人</string>
+    <string name="verify_address">收货地址</string>
+    <string name="has_reminder_context">已认证，如需修改请联系客服</string>
+    <string name="reminder_context">请填写真实信息，一旦填写不可自行修改，如需修改请联系客服。</string>
+    <string name="reminder_context_one">若联系不到本人时，我们会联系您填写的紧急联系人</string>
+    <string name="name_id">姓名</string>
+    <string name="card_id">身份证</string>
+    <string name="quicky_verify">立即认证</string>
+    <string name="quicky_invest">立即投资</string>
+    <string name="save">保  存</string>
+    <string name="confirm">确   定</string>
+    <string name="user_name">用户名</string>
+    <string name="really_name">真实姓名</string>
+    <string name="feedback_context">请输入您要反馈的内容</string>
+    <string name="password">密码</string>
+    <string name="agian_password">重复密码</string>
+    <string name="car_model">车辆型号</string>
+    <string name="remember_user_name">记住密码</string>
+    <string name="reminder_register">我已同意</string>
+    <string name="reminder_register_agree">《智富360网站服务协议》</string>
+    
+    <string name="find_password">忘记密码？</string>
+    <string name="mobile_phone">手机号码</string>
+    <string name="mobile_phone_one">请输入手机号码</string>
+    <string name="mobile_invitecode">邀请码</string>
+    <string name="submit_feedback">提交反馈</string>
+    <string name="right_verify">请输入右边的验证码</string>
+    <string name="loan_money">借款金额</string>
+    <string name="loan_time">借款期限</string>
+    <string name="back_money_type">还款方式</string>
+    <string name="email">邮编</string>
+    <string name="address">地址</string>
+    <string name="open_account">开户支行</string>
+    <string name="bank_card">银行卡号</string>
+    <string name="original_password">原始密码</string>
+    <string name="new_password">请输入您的新的密码</string>
+    <string name="again_new_password">请再次输入新密码</string>
+    <string name="next_set">下一步</string>
+    <string name="confirm_update">确认修改</string>
+    <string name="contact_service">联系客服</string>
+    <string name="new_password_to_phone">发送新的密码到手机</string>
+    <string name="login">立即登录</string>
+    <string name="quick_resigter">立即注册</string>
+    <string name="register_one">从您加入智富360的第一天起</string>
+    <string name="register_two">还没有智富360账号？</string>
+    <string name="user_login">用户登录</string>
+    <string name="user_resigter">用户注册</string>
+    <string name="forget_password">忘记密码？立即找回</string>
+    <string name="news_information">新闻资讯</string>
+    <string name="rank">排行榜</string>
+    <string name="new_information">最新资讯</string>
+    <string name="site_notice">网站公告</string>
+    <string name="media_report">媒体报道</string>
+    <string name="processing_bid">进行中的标</string>
+    <string name="complete_bid">已完成的标</string>
+    <string name="my_bid">我参与的标</string>
+    <string name="annual_rate">年收益率</string>
+    <string name="bid_deadline">投标期限</string>
+    <string name="repayment_time">还款时间</string>
+    <string name="bid_money">标的金额</string>
+    <string name="join_us_reminder">您提交信息后我们会在三个工作日内与您联系</string>
+    <string name="message_verify">请输入验证码</string>
+    <string name="receive_message_verify">收到的的语音验证码</string>
+    <string name="get_verify">点击获取验证码</string>
+    <string name="had_verify">已认证,如需修改手机号，请联系客服</string>
+    <string name="had_submit">申请已提交成功，我们会在3-5个工作日进行审核，审核通过后，客服会主动联系您。</string>
+    <string name="submit_join_message">提交加盟信息</string>
+    <string name="use_balance">可用余额(元)</string>
+    <string name="use_crash_balance">可提现余额(元)</string>
+    <string name="use_doing_balance">处理中资金(元)</string>
+    <string name="recharge">充值</string>
+    <string name="withdraw_deposit">提现</string>
+    <string name="account_recharge">账户充值</string>
+    <string name="account_withdraw_deposit">账户提现</string>
+    <string name="recharge_account">充值账号</string>
+    <string name="select_bank">选择支付银行</string>
+    <string name="recharge_message">我已阅读并确认下方重要提示信息</string>
+    <string name="withdraw_deposit_message">我无套现意图，申请免收管理费0元</string>
+    <string name="confirm_recharge">确认充值</string>
+    <string name="confirm_submit">确认提交</string>
+    <string name="confirm_withdraw_deposit">确认提现</string>
+    <string name="recharge_reminder">温馨提示</string>
+    <string name="please_reminder">请您准备好以下材料</string>
+    <string name="recharge_reminder_context">    1.每日的充值限额以各银行限额为准。\n
+    2.智富360严禁信用卡套现、转账、洗钱等行为,一经发现将予以出发,包括但不限于：冻结账户、永久停止服务等。\n
+    3.充值成功后，未进行投资直接提现。我要缴纳千分之三的管理费给第三方资金托管平台,智富360代为扣除。\n
+    4.充值过程遇到问题,请联系客服,400-600-6789</string>
+    <string name="withdraw_deposit_reminder_context">1.每笔提款额度申请不得低于2元(含2元)。\n\n2.为防止违法行为，将对异常提款(包括提取未投标资金)进行严格审核,审核时间在15个工作日之内。\n\n3.提现费用:单笔提现费用2元。单笔提现额度不限制，每天提现笔数不限制。\n\n4.管理费用：未充值投标资金在15天内提现收款0.3%的管理费用。\n\n5.提现及到账时间：工作日当日10:30前提现，正常会在当天到账，10:30以后会在下一个工作日到账，(周末及节假日暂不支持提现)。</string>
+    <string name="id_card">身份证</string>
+    <string name="car_card">车辆登记证</string>
+    <string name="driver_card">行驶证</string>
+    <string name="car_list">车辆保险单</string>
+    <string name="credit_report">征信报告</string>
+    <string name="income_point">收入证明</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="payamount">投资金额</string>
+    <string name="rate_of_interest">年化利率</string>
+    <string name="hkfq">还款分期</string>
+    <string name="returned_time">回款时间</string>
+    <string name="totalIncome">收益总额</string>
+    <string name="current_interest">当前利息</string>
+    <string name="current_principal">当前本金</string>
+    <string name="exit_message">确定退出智富360?</string>
+    <string name="prompt_content">为了更大限度保护投资人资金安全，智富360所有资金使用第三方托管服务，因此手机客户端不支持在线充值功能，请使用电脑浏览器充值</string>
+    <string name="available_num">可提现金额 :</string>
+    <string name="withdraw_num">提现金额 :</string>
+    <string name="no_intent">提示：您的资金将从合作银行监管账户转入提现银行卡</string>
+    <string name="Prompt">温馨提示</string>
+    
+    <string name="pay_account_hint">请输入充值金额</string>
+    <string name="pay_account_confirm">提交</string>
+    
+      <!-- Gesture code starting -->
+    <string name="setup_gesture_code">设置手势密码</string>
+    <string name="setup_gesture_pattern">绘制解锁图案</string>
+    <string name="setup_gesture_pattern_again">再次绘制解锁图案</string>
+    <string name="forget_gesture_code">忘记手势密码?</string>
+    <string name="use_other_account_login">用密码登录</string>
+    <string name="set_gesture_pattern">绘制解锁图案</string>
+    <string name="set_gesture_pattern_reason">设置手势密码，防止他人未经授权查看</string>
+    <string name="reset_gesture_code">重新设置手势密码</string>
+    <!-- End -->
+
+</resources>

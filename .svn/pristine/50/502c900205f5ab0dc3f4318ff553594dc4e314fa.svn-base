@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="red">#F6250D</color>
+    <color name="main_bg_color">#162B4A</color>
+    <color name="bg_color">#F7F8F9</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="gray">#E4E4E4</color>
+    <color name="green">#50A62B</color>
+    <color name="blue">#F0F4F7</color>
+    <color name="blue_two">#0F1E35</color>
+    <color name="green_bg">#15B209</color>
+    <color name="green_press">#239832</color>
+    <color name="reminder_bg">#FFFEE7</color>
+    <color name="reminder_line">#F8F3CD</color>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 纯白色 -->
+    <color name="white">#FFFFFF</color>
+    <!-- 字体色白色 -->
+    <color name="textcolor_white">#FEFEFC</color>
+    <!-- 字体色灰色 -->
+    <color name="textcolor_gray">#8F8F8F</color>
+    <!-- 字体色黑色 -->
+    <color name="textcolor_black">#363636</color>
+    <!-- 字体色淡黑色 -->
+    <color name="textcolor_light_black">#636363</color>
+    <!-- 字体色红色 -->
+    <color name="textcolor_red">#ED2647</color>
+    <!-- 字体色淡灰 -->
+    <color name="textcolor_light_gray">#666666</color>
+    <!-- 字体青色 -->
+    <color name="textcolor_green">#0CB9A6</color>
+     <!-- 字体蓝色 -->
+    <color name="textcolor_blue">#2C6FF7</color>
+    
+    <!-- 草绿色，Progress为100%是显示 -->
+    <color name="textcolor_grass_green">#BBD102</color>
+    
+    <!-- 线的颜色 -->
+    <color name="line">#CFCFCF</color>
+    <!-- listView item点击色 -->
+    <color name="listpress">#D9D9D9</color>
+    <!-- listView item点击色 -->
+    <color name="trans">#50000000</color>
+
+    <!-- 红色按钮点击色 -->
+    <color name="red_normal">#ED2647</color>
+    <color name="red_press">#c7223e</color>
+    <color name="red_text">#FD4406</color>
+    <color name="devide_line">#D5D5D5</color>
+    <color name="dark_purple">#34312e</color>
+    <color name="buttonbgcolor">#7FCDEA</color>
+    <color name="putong_color">#585858</color>
+    
+    
+    <!-- 新定义颜色 -->
+	<color name="color_coffee">#B49060</color>
+	<color name="color_f8f8f8">#F8F8F8</color>
+	
+	<color name="coffee_normal">#9B7548</color>
+	<color name="coffee_press">#8E6B42</color>
+	
+	<color name="reset_normal">#bFC0C1</color>
+	
+	
+	
+</resources>

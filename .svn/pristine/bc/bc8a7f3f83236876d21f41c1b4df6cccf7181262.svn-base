@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_layout"
+    style="@style/CustomExitDialog"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal|center_vertical" >
+
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/devide_line"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingTop="20dp"
+        android:text="@string/prompt_content"
+        android:textColor="@color/dark_purple"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:layout_above="@+id/bottom"
+        android:background="@color/devide_line" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <View
+            android:id="@+id/verDev"
+            android:layout_width="0.5dip"
+            android:layout_height="fill_parent"
+            android:background="@color/line" />
+
+        <!-- #7FCDEA -->
+
+        <Button
+            android:id="@+id/btn_exit_dialog_sure"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg_color"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/dark_purple"
+            android:textSize="18dip" />
+    </LinearLayout>
+
+</RelativeLayout>

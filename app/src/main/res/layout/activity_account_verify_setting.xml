@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/main_header" >
+    </include>
+
+    <View
+        android:id="@+id/account_setting_verify_lv_temp1"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/top"
+        android:background="@color/bg_color" />
+
+    <ListView
+        android:id="@+id/account_setting_verify_lv_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/account_setting_verify_lv_temp1"
+        android:divider="@color/bg_color"
+        android:listSelector="@color/transparent" >
+    </ListView>
+
+    <View
+        android:id="@+id/account_setting_verify_lv_temp2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/account_setting_verify_lv_one"
+        android:background="@color/bg_color" />
+
+    <ListView
+        android:id="@+id/account_setting_verify_lv_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/account_setting_verify_lv_temp2"
+        android:divider="@color/bg_color"
+        android:dividerHeight="10dp"
+        android:listSelector="@color/transparent" >
+    </ListView>
+
+    <com.famous.zhifu.loan.view.View_Loading
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+    </com.famous.zhifu.loan.view.View_Loading>
+
+    <View
+        android:id="@+id/account_setting_verify_lv_temp3"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/account_setting_verify_lv_two"
+        android:background="@color/bg_color" />
+
+    <RelativeLayout android:id="@+id/account_setting_verify_lv_tgborder"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:layout_below="@id/account_setting_verify_lv_temp3"
+        android:onClick="tbHandler" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="手势密码"
+            android:textColor="@color/textcolor_black" 
+            android:textSize="14sp"/>
+        
+        <ToggleButton
+            android:id="@+id/account_setting_verify_lv_tglSound"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_butn_toggle"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:visibility="gone" />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_right" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/account_setting_verify_lv_temp4"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/account_setting_verify_lv_tgborder"
+        android:background="@color/bg_color" />
+    
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/account_setting_verify_lv_temp4"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/red_btn_bk"
+        android:text="安全退出"
+        android:textColor="@color/textcolor_white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

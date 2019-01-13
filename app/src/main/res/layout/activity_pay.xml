@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/main_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_no_concer"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/password"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/pay_account"
+            style="@style/verify_edittext"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/pay_account_hint"
+            android:textColor="@color/textcolor_black"
+            android:textColorHint="@color/textcolor_gray"
+            android:textSize="14sp"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/pay_submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/red_btn_bk"
+        android:text="@string/pay_account_confirm"
+        android:textColor="@color/white_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/findPwd"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="15dp"
+        android:gravity="right"
+        android:text="@string/pay_account_confirm"
+        android:textColor="@android:color/black"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+</LinearLayout>

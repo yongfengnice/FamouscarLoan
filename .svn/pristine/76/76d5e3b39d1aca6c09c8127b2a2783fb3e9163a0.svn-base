@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progressbar="http://schemas.android.com/apk/res/com.famous.zhifu.loan"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/cate_logo"
+            android:layout_width="55dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="7"
+            android:paddingLeft="3dp" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="【第232期】IX25北京现代1111111111"
+                android:textColor="@color/textcolor_black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_below="@id/title"
+                android:layout_marginTop="3dp" >
+
+                <TextView
+                    android:id="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="6dp"
+                    android:text="￥"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/loanmoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@id/img"
+                    android:gravity="center_vertical"
+                    android:text="64,000元"
+                    android:textColor="@color/textcolor_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/loanstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="投标中"
+                    android:textColor="@color/textcolor_black"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_below="@id/rl"
+                android:layout_marginTop="2dp" >
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/duoduotime" />
+
+                <TextView
+                    android:id="@+id/yearRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@id/img1"
+                    android:text="15.40％"
+                    android:textColor="@color/textcolor_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/loanmonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="3个月"
+                    android:textColor="@color/textcolor_black"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- 圆形进度条 -->
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.2"
+            android:gravity="center" >
+
+            <com.famous.zhifu.loan.view.circleprogress.CircleProgressBar
+                android:id="@+id/circle"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:visibility="visible"
+                progressbar:circleStyle="STROKE"
+                progressbar:maxProgress="100"
+                progressbar:progressTextColor="#363636"
+                progressbar:progressTextSize="18sp"
+                progressbar:progressTextVisibility="true"
+                progressbar:ringNormalColor="#EDEDED"
+                progressbar:ringProgressColor="@color/red"
+                progressbar:ringWidth="6dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
